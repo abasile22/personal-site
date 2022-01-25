@@ -9,13 +9,6 @@ html {
     box-sizing: inherit;
 }
 
-@font-face {
-    font-family: 'Rubik';
-    src: url('../fonts/Rubik/Rubik-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
 body {
     background-color: #003467;
     /*background-image: url('../img/starwheel.svg');*/
@@ -24,7 +17,26 @@ body {
     background-repeat: no-repeat;
 }
 
+.language {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: auto;
+}
 
+.language a {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #F2F4F5;
+    text-decoration: none;
+    font-size: 1.5em;
+    padding: 5px;
+    padding-bottom: 1px;
+    margin: 20px
+}
+
+.language .es {
+    background-color: #E63946;
+}
 
 .circle {
     position:absolute;
@@ -42,6 +54,7 @@ body {
   }
 
 .navbar {
+    margin: auto;
     position: fixed;
     min-height: 50px;
     overflow: hidden;
@@ -50,9 +63,17 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: auto;
     box-shadow: 0 7px 20px 0 rgba(0,0,0,0.2),0 4px 10px 0 rgba(0,0,0,0.2);
     z-index: 2;
+}
+
+@media (max-width: 800px) {
+    .navbar li{
+        display: table-column;
+        vertical-align: middle;
+        border-bottom: 4px solid transparent;
+        justify-content: center;
+    }
 }
 
 .navbar ul {
@@ -68,17 +89,36 @@ body {
     justify-content: center;
 }
 
+.nav2 {
+    display: block;
+}
+
 .navbar li a {
     display: block;
     padding: 15px;
     padding-right: 20px;
     padding-left: 20px;
     text-decoration: none;
-    color: #F1FAEE;
-    font-family: 'Rubik', sans-serif;
+    color: #F2F4F5;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 1.5em;
     font-weight: 800;
     justify-content: center;
+}
+
+@media (max-width: 800px) {
+    .navbar li a {
+        display: block;
+        padding: 15px;
+        padding-right: 10px;
+        padding-left: 10px;
+        text-decoration: none;
+        color: #F2F4F5;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 1.5em;
+        font-weight: 800;
+        justify-content: center;
+    }
 }
 
 .navbar li:hover {
@@ -104,9 +144,19 @@ body {
 .home h1 {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 10em;
-    margin: 0;
+    margin: auto;
     padding-top: 50px;
     margin-top: 50px;
+}
+
+@media (max-width: 800px) {
+    .home h1 {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 5em;
+        margin: auto;
+        padding-top: 50px;
+        margin-top: 50px;
+    }
 }
 
 .home h2 {
@@ -120,6 +170,21 @@ body {
     margin-bottom: 30px;
     padding-top: 15px;
     padding-bottom: 10px;
+}
+
+@media (max-width: 800px) {
+    .home h2 {
+        background-color: #E63946;
+        color: #F1FAEE;
+        width: 55%;
+        height: 1.8em;
+        font-size: 2em;
+        margin: auto;
+        margin-top: 0;
+        margin-bottom: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
 }
 
   @-webkit-keyframes blink {
@@ -141,7 +206,7 @@ body {
 .home p {
     color: #F1FAEE;
     font-size: 1.8em;
-    font-family: 'Rubik';
+    font-family: 'Rubik', sans-serif;
     margin: auto;
     padding-top: 10px;
     width: 30%;
@@ -155,6 +220,8 @@ body {
 @media (max-width: 800px) {
     .home p {
         width: 80%;
+        font-size: 1.5em;
+        
     }
 }
 
@@ -165,29 +232,40 @@ body {
     background-color: #19345A;
 }
 
+@media (max-width: 800px) {
+    .home img {
+        height: 180px;
+        width: 180px;
+        border-radius: 50%;
+        background-color: #19345A;
+    }
+}
+
 .skills {
-    height: 94vh;
     display: flex;
     flex-direction: column;
     color: #F2F4F5;
     min-height: 500px;
     text-align: center;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Rubik', sans-serif;
     width: 100%;
     margin: auto;
     overflow: hidden;
     background-color: #02447B;
+    padding-bottom: 50px;
 }
 
 .title {
     color: #F2F4F5;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-size: 4.5em;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 30px;
+    margin-bottom: 30px;
+    padding-top: 50px;
     width: 25%;
     margin-left: auto;
     margin-right: auto;
@@ -205,6 +283,7 @@ body {
 @media (max-width: 800px) {
     .skills-icons {
       flex-direction: column;
+      width: 100%;
       
     }
   }
@@ -274,9 +353,18 @@ footer {
     position: relative;
 }
 
-footer img {
+.footer-logo {
     height: 80px;
 }
+
+.thing-logo {
+    width: 40px;
+}
+
+.thing-logo-a {
+    height: 10px;
+}
+
 
 footer div {
     position: absolute;
@@ -295,7 +383,7 @@ footer div {
     margin: auto;
 }
 
-.links i{
+.links i, .links svg{
     margin-right: 10px;
     margin-left: 10px;
     border-radius: 50%;
@@ -308,7 +396,11 @@ footer div {
     padding-top: 0.9rem
 }
 
-.links i:hover {
+.links svg{
+    padding: 0.65rem
+}
+
+.links i:hover, svg:hover {
     background-color: #E63946;
 }
 
@@ -320,7 +412,7 @@ footer div {
     padding-bottom: 10px;
     padding-top: 30px;
     color: #F2F4F5;
-    font-family: 'Rubik';
+    font-family: 'Rubik', sans-serif;
     font-size: 1.5em;
     text-decoration: none;
 }
@@ -363,12 +455,10 @@ footer div {
     font-size: 1.2em;
 }
 
-
-
 .about p {
     color: #F2F4F5;
     font-size: 1.8em;
-    font-family: 'Rubik';
+    font-family: 'Rubik', sans-serif;
     margin: auto;
     padding-top: 10px;
     width: 30%;
@@ -376,6 +466,21 @@ footer div {
     text-align: justify;
     overflow: hidden;
     line-height: 1.4;
+}
+
+@media (max-width: 800px) {
+    .about p {
+        color: #F2F4F5;
+        font-size: 1.8em;
+        font-family: 'Rubik', sans-serif;
+        margin: auto;
+        padding-top: 10px;
+        width: 80%;
+        justify-content: center;
+        text-align: justify;
+        overflow: hidden;
+        line-height: 1.4;
+    }
 }
 
 .pc {
@@ -402,7 +507,7 @@ footer div {
   padding: 0 20px;
   position: relative;
   font-size: 1em;
-  font-family: 'Rubik';
+  font-family: 'Rubik', sans-serif;
   text-align: justify;
   color: #003467;
 }
@@ -463,9 +568,11 @@ footer div {
 }
 
 .detail-tag {
+    font-family: 'Rubik', sans-serif;
     font-size: 1.5em;
     text-align: right;
     line-height: 1.3;
+    font-weight: 500;
 }
 
 .meli {
@@ -510,13 +617,22 @@ footer div {
 
   .row p {
     font-size: 1.5em;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 1.3;
   }
+  .row ul {
+    padding-left: 18px;
+  }
+
+  .row b {
+      font-weight: 800;
+  }
+
   .row li {
     font-size: 1.5em;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 1.3;
+    list-style-type: circle;
   }
 
 
